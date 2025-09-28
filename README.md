@@ -1,4 +1,4 @@
-# Project-1-Many-Time-Pad-Attack
+# Project1 - Many Time Pad Attack
 Mục tiêu ngắn gọn
 
 Bạn có một bộ ciphertexts được mã bằng stream cipher (hoặc OTP) mà keystream bị reuse cho nhiều plaintext. Mục tiêu là tái tạo plaintext (đặc biệt target) bằng cách khai thác mối quan hệ:
