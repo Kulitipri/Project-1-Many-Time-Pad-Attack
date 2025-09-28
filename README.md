@@ -1,4 +1,4 @@
-# Project 1 - Recovering plaintext from multiple ciphertexts sharing a keystream
+# Project 1 - Many Time Pad Attack
 
 **Goal**
 
