@@ -35,6 +35,6 @@ This short report describes the method and results of a script that recovers pla
 
 **Tools & Reference**
 
-* **ChatGPT** and Python for code building and fixing code
-* With ChatGPT, It suggests the idea of threshold (main idea) and space-trick (side idea) and also part of this README.
-* Using Python to build and excute the code, help automating most of tasks like XORing ciphertexts, auto-filling the encrypted bytes, etc.
+* **ChatGPT** and **Python** for code building and fixing code
+* With **ChatGPT**, It suggests the idea of threshold (main idea) and space-trick (side idea), also part of this README.
+* Using **Python** to build and excute the code, help automating most of tasks like XORing ciphertexts, auto-filling the encrypted bytes, etc.
