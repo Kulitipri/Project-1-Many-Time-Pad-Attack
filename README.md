@@ -12,6 +12,7 @@ This short report describes the method and results of a script that recovers pla
 4. Use `partial_key` to decrypt all ciphertexts; unknown positions print as `?`.
 5. With `space-trick`, for positions not determined by thresholding, the script tests candidates assuming `space` in one ciphertext, checks consistency with others, and selects the candidate key that maximizes valid English-like letters.
 6. Apply `manual_hints` to compute exact key bytes from known plaintext characters: `key[pos] = ct_i[pos] ⊕ ord(char)`.
+7. Again using `manual_hints` but with human predictions for perfect solution: `The secret message is: When using a stream cipher, never use the key more than once`
 
 **How to run**
 
