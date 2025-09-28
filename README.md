@@ -19,6 +19,7 @@ This short report describes the method and results of a script that recovers pla
 * Adjust the `threshold` parameter in the script (typical values 5–8).
 * Run the Python script; outputs show decrypted plaintexts 1..10 and the target (unknown bytes as `?`).
 * If necessary, add `manual_hints` to correct specific bytes (recommend using hints from non-target ciphertexts to preserve attack realism).
+* In fact, I don't like the way `space-trick` work, because the way it filling the word is too risky. I like the `threshold` because it guess the word more "math-way"
 
 **Results & Limitations**
 
