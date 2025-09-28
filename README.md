@@ -4,13 +4,14 @@
 
 This short report describes the method and results of a script that recovers plaintexts from a set of ciphertexts encrypted with the *same keystream* (keystream reuse — a critical mistake for stream ciphers / OTP). The objective is to exploit the relation `ct_i ⊕ ct_j = pt_i ⊕ pt_j` to recover parts of the keystream and reconstruct plaintexts, especially a target ciphertext.
 
-**Method**
+**Method** Threshold(main idea) & Space-trick(side idea)
 
 1. Convert ciphertexts from hex to bytes.
 2. For every pair of ciphertexts `(i, j)` compute `x = ct_i ⊕ ct_j`. If `x[pos]` is an alphabetic character (A–Z, a–z) or space, increment a vote counter for `ct_i` at position `pos`.
 3. For each ciphertext `i`, if `votes(pos) ≥ threshold` assume `pt_i[pos] = ' '` and derive `key[pos] = ct_i[pos] ⊕ 0x20`. The bytes found this way form a `partial_key`.
 4. Use `partial_key` to decrypt all ciphertexts; unknown positions print as `?`.
-5. Apply `manual_hints` to compute exact key bytes from known plaintext characters: `key[pos] = ct_i[pos] ⊕ ord(char)`.
+5. With `space-trick`, for positions not determined by thresholding, the script tests candidates assuming `space` in one ciphertext, checks consistency with others, and selects the candidate key that maximizes valid English-like letters.
+6. Apply `manual_hints` to compute exact key bytes from known plaintext characters: `key[pos] = ct_i[pos] ⊕ ord(char)`.
 
 **How to run**
 
