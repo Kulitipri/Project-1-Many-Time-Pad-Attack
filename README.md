@@ -11,7 +11,7 @@ This short report describes the method and results of a script that recovers pla
 3. For each ciphertext `i`, if `votes[pos] ≥ threshold` assume `pt[i][pos] = ' '` and derive `key[pos] = ct[i][pos] ⊕ 0x20`. The bytes found this way form a `partial_key`.
 4. Use `partial_key` to decrypt all ciphertexts; unknown positions print as `?`.
 5. With `space-trick`, for positions not determined by thresholding, the script tests candidates assuming `space` in one ciphertext, checks consistency with others, and selects the candidate key that maximizes valid English-like letters.
-6. Apply `manual_hints`(with computing) to guess exact key bytes from known plaintext characters: `key[pos] = ct[i][pos] ⊕ ord(char)`.
+6. Apply `manual_hints`(with computing) to guess exact key bytes from known plaintext characters: `key[pos] = ct[i][pos] ⊕ ord[char]`.
 7. Again using `manual_hints` (but with human predictions) for perfect solution
 
 **How to run**
