@@ -4,7 +4,7 @@
 
 This short report describes the method and results of a script that recovers plaintexts from a set of ciphertexts encrypted with the *same keystream* (keystream reuse — a critical mistake for stream ciphers / OTP). The objective is to exploit the relation `ct[i] ⊕ ct[j] = pt[i] ⊕ pt[j]` to recover parts of the keystream and reconstruct plaintexts, especially a target ciphertext.
 
-**Method** `Threshold`(main idea) & `Space-trick`(side idea)
+**Method** `threshold`(main idea) & `space-trick`(side idea)
 
 1. Convert ciphertexts from hex to bytes.
 2. For every pair of ciphertexts `(i, j)` compute `x = ct[i] ⊕ ct[j]`. If `x[pos]` is an alphabetic character (A–Z, a–z) or space, increment a vote counter for `ct[i]` at position `pos`.
