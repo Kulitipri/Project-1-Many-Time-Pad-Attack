@@ -33,4 +33,4 @@ This short report describes the method and results of a script that recovers pla
 
 * ChatGPT and Python for code building and fixing code
 * With ChatGPT, It suggests the idea of threshold (main idea) and space-trick (side idea)
-* Using Python to build the code, help automating most of tasks like XORing ciphertexts, etc.
+* Using Python to build the code, help automating most of tasks like XORing ciphertexts, auto-filling the encrypted bytes, etc.
