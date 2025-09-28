@@ -1,7 +1,7 @@
 # README — Recovering plaintext from multiple ciphertexts sharing a keystream
 
 **Goal**
-This short report describes the method and results of a script that recovers plaintexts from a set of ciphertexts encrypted with the *same keystream* (keystream reuse — a critical mistake for stream ciphers / OTP). The objective is to exploit the relation `ct_i ⊕ ct_j = pt_i ⊕ pt_j` to recover parts of the keystream and reconstruct plaintexts, especially a target ciphertext.
+  This short report describes the method and results of a script that recovers plaintexts from a set of ciphertexts encrypted with the *same keystream* (keystream reuse — a critical mistake for stream ciphers / OTP). The objective is to exploit the relation `ct_i ⊕ ct_j = pt_i ⊕ pt_j` to recover parts of the keystream and reconstruct plaintexts, especially a target ciphertext.
 
 **Method**
 
