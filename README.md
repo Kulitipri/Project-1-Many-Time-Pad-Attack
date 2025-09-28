@@ -10,7 +10,7 @@ This short report describes the method and results of a script that recovers pla
 2. For every pair of ciphertexts `(i, j)` compute `x = ct_i ⊕ ct_j`. If `x[pos]` is an alphabetic character (A–Z, a–z) or space, increment a vote counter for `ct_i` at position `pos`.
 3. For each ciphertext `i`, if `votes(pos) ≥ threshold` assume `pt_i[pos] = ' '` and derive `key[pos] = ct_i[pos] ⊕ 0x20`. The bytes found this way form a `partial_key`.
 4. Use `partial_key` to decrypt all ciphertexts; unknown positions print as `?`.
-5. (Optional) Apply `manual_hints` to compute exact key bytes from known plaintext characters: `key[pos] = ct_i[pos] ⊕ ord(char)`.
+5. Apply `manual_hints` to compute exact key bytes from known plaintext characters: `key[pos] = ct_i[pos] ⊕ ord(char)`.
 
 **How to run**
 
@@ -28,3 +28,9 @@ This short report describes the method and results of a script that recovers pla
 
 * Keystream reuse is a severe vulnerability: exposing a few ciphertexts can compromise the entire set.
 * To improve automation and accuracy, consider: (a) n-gram or dictionary refinements, (b) preventing overwrite of threshold-derived key bytes during filling, and (c) reporting low-confidence positions so an analyst can provide a small number of non-target hints.
+
+**Tools & Reference**
+
+* ChatGPT and Python for code building and fixing code
+* With ChatGPT, It suggests the idea of threshold (main idea) and space-trick (side idea)
+* Using Python to build the code, help automating most of tasks like XORing ciphertexts, etc.
