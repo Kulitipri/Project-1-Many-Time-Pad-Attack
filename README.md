@@ -8,7 +8,7 @@ This short report describes the method and results of a script that recovers pla
 
 1. Convert ciphertexts from hex to bytes.
 2. For every pair of ciphertexts `(i, j)` compute `x = ct[i] ⊕ ct[j]`. If `x[pos]` is an alphabetic character (A–Z, a–z) or space, increment a vote counter for `ct[i]` at position `pos`.
-3. For each ciphertext `i`, if `votes(pos) ≥ threshold` assume `pt[i][pos] = ' '` and derive `key[pos] = ct[i][pos] ⊕ 0x20`. The bytes found this way form a `partial_key`.
+3. For each ciphertext `i`, if `votes[pos] ≥ threshold` assume `pt[i][pos] = ' '` and derive `key[pos] = ct[i][pos] ⊕ 0x20`. The bytes found this way form a `partial_key`.
 4. Use `partial_key` to decrypt all ciphertexts; unknown positions print as `?`.
 5. With `space-trick`, for positions not determined by thresholding, the script tests candidates assuming `space` in one ciphertext, checks consistency with others, and selects the candidate key that maximizes valid English-like letters.
 6. Apply `manual_hints`(with computing) to guess exact key bytes from known plaintext characters: `key[pos] = ct[i][pos] ⊕ ord(char)`.
